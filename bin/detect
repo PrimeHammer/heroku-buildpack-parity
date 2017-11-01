@@ -4,5 +4,7 @@
 # Uncomment to debug
 set -x
 
+echo "This is test"
+
 echo 'Parity Ethereum Client'
-exit 0
+

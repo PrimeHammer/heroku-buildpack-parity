@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-# Uncomment to debug
-set -x
-
-echo "This is test"
-
 echo 'Parity Ethereum Client'
-
+exit 0

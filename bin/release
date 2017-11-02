@@ -10,5 +10,5 @@
 cat << EOF
 addons: []
 default_process_types:
-  web: echo "Hello"
+  web: echo "Released"
 EOF

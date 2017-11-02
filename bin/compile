@@ -27,7 +27,7 @@ echo "done"
 echo -n "Building parity..."
 cd $BUILD_DIR/parity
 rm -rf target/
-~/.cargo/bin/cargo build --release --no-default-features --features ui
+~/.cargo/bin/cargo build --release --verbose
 echo "done"
 
 echo "List current directory"

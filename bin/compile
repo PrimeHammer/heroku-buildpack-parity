@@ -8,15 +8,35 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-echo -n "Cloning parity..."
-git clone https://github.com/paritytech/parity $BUILD_DIR/parity
+echo -n "Downloading rustup..."
+curl https://sh.rustup.rs -sSf > rustup.sh
+chmod u+x rustup.sh
+echo "done"
+
+echo -n "Installing Rust..."
+./rustup.sh -y --default-toolchain stable
+rm rustup.sh
 echo "done"
 
 echo "Cargo version: `cargo --version`"
 
+echo -n "Cloning parity..."
+git clone https://github.com/paritytech/parity $BUILD_DIR/parity
+echo "done"
+
 echo -n "Building parity..."
 cd $BUILD_DIR/parity
+rm -rf target/
 cargo build --release
 echo "done"
+
+echo "List current directory"
+ls -la
+
+echo "List target directory"
+ls -la
+
+echo "Find parity binary"
+find . -type f -executable -iname parity
 
 exit 0

@@ -1,22 +1,21 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
-set -x
-#set -o errexit    # always exit on error
-#set -o pipefail   # don't ignore exit codes when piping output
+set -o errexit    # always exit on error
+set -o pipefail   # don't ignore exit codes when piping output
 
-#BUILD_DIR=${1:-}
-#CACHE_DIR=${2:-}
-#ENV_DIR=${3:-}
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
 
 echo -n "Cloning parity..."
-git clone https://github.com/paritytech/parity
+git clone https://github.com/paritytech/parity $BUILD_DIR/parity
 echo "done"
 
 echo "Cargo version: `cargo --version`"
 
 echo -n "Building parity..."
-cd parity
+cd $BUILD_DIR/parity
 cargo build --release
 echo "done"
 

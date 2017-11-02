@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-compile "build" "cache" "env"
+. ${BUILDPACK_TEST_RUNNER_HOME}/lib/test_utils.sh
+
+compile
 assertCapturedSuccess

@@ -18,7 +18,8 @@ echo -n "Installing Rust..."
 rm rustup.sh
 echo "done"
 
-echo "Cargo version: `cargo --version`"
+ls ~
+echo "Cargo version: `~/.cargo/bin/cargo --version`"
 
 echo -n "Cloning parity..."
 git clone https://github.com/paritytech/parity $BUILD_DIR/parity

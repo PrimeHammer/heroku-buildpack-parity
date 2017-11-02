@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
+# cat << EOF
+# addons: []
+# default_process_types:
+#   web: parity --ui-port 8180 --rpcaddr 127.0.0.1 --rpcport 9007 --rpcapi “web3,eth” --pruning fast
+# EOF
+
 cat << EOF
 addons: []
 default_process_types:
-  web: parity --ui-port 8180 --rpcaddr 127.0.0.1 --rpcport 9007 --rpcapi “web3,eth” --pruning fast
+  web: echo "Hello"
 EOF

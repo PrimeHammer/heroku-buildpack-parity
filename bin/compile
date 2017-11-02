@@ -18,7 +18,6 @@ echo -n "Installing Rust..."
 rm rustup.sh
 echo "done"
 
-ls ~
 echo "Cargo version: `~/.cargo/bin/cargo --version`"
 
 echo -n "Cloning parity..."
@@ -28,7 +27,7 @@ echo "done"
 echo -n "Building parity..."
 cd $BUILD_DIR/parity
 rm -rf target/
-cargo build --release
+~/.cargo/bin/cargo build --release
 echo "done"
 
 echo "List current directory"

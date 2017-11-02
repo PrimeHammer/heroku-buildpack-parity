@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
-# Uncomment to debug
-set -x
-
 #set -o errexit    # always exit on error
 #set -o pipefail   # don't ignore exit codes when piping output
 
@@ -11,6 +8,6 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-curl --version
-cargo --version
-brew --version
+echo "`curl --version`"
+echo "`cargo --version`"
+echo "`brew --version`"
